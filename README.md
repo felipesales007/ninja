@@ -60,6 +60,9 @@ src/
 ### Cloner le projet
 ```bash
 git clone https://github.com/felipesales007/ninja.git
+```
+
+```bash
 cd ninja
 ```
 
