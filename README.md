@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧠 Test Technique – Dev Fullstack (Next.js 15)
 
-## Getting Started
+Ce projet a été réalisé dans le cadre du test technique pour le poste de **Développeur Fullstack Senior**.  
+Il s’agit d’une mini-application Next.js 15 utilisant **App Router**, **TypeScript** et **TailwindCSS**.
 
-First, run the development server:
+L’application contient :
+- Une **page d’accueil** avec une liste paginée de polices de caractères.
+- Une **page de détails** pour chaque police.
+- Un **thème clair/sombre** géré via un cookie et partagé sur tout le site.
+- Un layout global avec logo et bouton de changement de thème.
+
+---
+
+## ⚙️ Technologies utilisées
+
+- **Next.js 15 (App Router)**
+- **TypeScript**
+- **TailwindCSS**
+- **Google Font Inter**
+- **Cookies** pour la gestion du thème
+- **Données mockées JSON** (aucun appel externe)
+
+---
+
+## 📁 Structure du projet
+
+```bash
+src/
+├─ app/
+│   ├─ api/
+│   │   ├─ families/route.ts          → Route API pour la liste des familles
+│   │   └─ familyDetails/route.ts     → Route API pour les détails d’une police
+│   ├─ components/
+│   │   ├─ cards/                     → Composants de cartes (Home + Détails)
+│   │   ├─ navbar.tsx                 → Barre de navigation avec switch du thème
+│   │   └─ pagination.tsx             → Composant de pagination
+│   ├─ font/[id]/page.tsx             → Page de détails d’une police
+│   ├─ globals.css                    → Styles globaux (inclut Tailwind)
+│   ├─ layout.tsx                     → Layout global (logo + switch thème)
+│   ├─ not-found.tsx                  → Page d’erreur 404
+│   └─ page.tsx                       → Page d’accueil avec pagination
+│
+├─ data/                              → Données mockées JSON fournies
+│   ├─ fontDetails.json
+│   ├─ fontFamiliesPage1.json
+│   ├─ fontFamiliesPage2.json
+│   └─ fontFamiliesPage3.json
+│
+├─ models/                            → Typages TypeScript
+│   ├─ fontDetail.ts
+│   └─ fontFamilie.ts
+│
+└─ …
+```
+
+---
+
+## 🚀 Installation & Lancement
+
+### Cloner le projet
+```bash
+git clone https://github.com/felipesales007/ninja.git
+cd ninja
+```
+
+```bash
+npm install
+```
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### L’application est accessible sur
+👉 http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🧠 Points supplémentaires
 
-To learn more about Next.js, take a look at the following resources:
+	•	Une page 404 personnalisée (not-found.tsx) a été ajoutée.
+	•	Les SVG sont rendus avec dangerouslySetInnerHTML pour garder leur structure vectorielle.
+	•	Tous les composants sont réactifs et respectent les classes dark: pour le mode sombre.
+	•	Code organisé, commenté et facilement maintenable.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🧾 Auteur
 
-## Deploy on Vercel
+Felipe — Développeur Senior
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Projet réalisé dans le cadre d’un test technique pour évaluer la maîtrise de Next.js 15, TypeScript, App Router, TailwindCSS et la logique de rendu serveur.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
