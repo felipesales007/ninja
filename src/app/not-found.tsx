@@ -1,8 +1,14 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Page non trouvée',
+  description: 'La page que vous recherchez est introuvable.',
+};
 
 export default function NotFoundPage() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center min-h-screen -mt-36">
       <h1 className="text-7xl font-extrabold text-red-400 drop-shadow-lg mb-4">
         404
       </h1>
