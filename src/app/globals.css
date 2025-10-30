@@ -37,3 +37,15 @@
   --border: #111827;
   color-scheme: dark;
 }
+
+.svg-responsive svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.svg-responsive rect,
+.svg-responsive path,
+.svg-responsive g {
+  vector-effect: non-scaling-stroke;
+}

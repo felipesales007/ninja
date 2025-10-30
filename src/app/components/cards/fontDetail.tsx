@@ -26,25 +26,23 @@ export default function CardFontDetailComponent({ item }: CardProps) {
     <div className="grid grid-cols-1 md:grid-cols-12 gap-1">
       <div className="md:col-span-8 rounded-2xl bg-white dark:bg-zinc-800 px-8 py-6">
         {/* prévisualisation de la police */}
-        <div className="h-26">
-          {selected === 'pangram' && item.images?.pangram?.svg && (
-            <div
-              className="scale-40 origin-top-left dark:invert"
-              title="Pangram preview"
-              aria-hidden
-              dangerouslySetInnerHTML={{ __html: item.images.pangram.svg }}
-            />
-          )}
+        {selected === 'pangram' && item.images?.pangram?.svg && (
+          <div
+            className="svg-responsive w-full max-w-sm sm:max-w-md lg:max-w-lg dark:invert"
+            title="Pangram preview"
+            aria-hidden
+            dangerouslySetInnerHTML={{ __html: item.images.pangram.svg }}
+          />
+        )}
 
-          {selected === 'alphabet' && item.images?.alphabet?.svg && (
-            <div
-              className="scale-40 origin-top-left dark:invert"
-              title="Alphabet preview"
-              aria-hidden
-              dangerouslySetInnerHTML={{ __html: item.images.alphabet.svg }}
-            />
-          )}
-        </div>
+        {selected === 'alphabet' && item.images?.alphabet?.svg && (
+          <div
+            className="svg-responsive w-full max-w-sm sm:max-w-md lg:max-w-lg dark:invert"
+            title="Alphabet preview"
+            aria-hidden
+            dangerouslySetInnerHTML={{ __html: item.images.alphabet.svg }}
+          />
+        )}
 
         {/* boutons de sélection de prévisualisation */}
         <div className="mt-26">
